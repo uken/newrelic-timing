@@ -24,7 +24,12 @@
 
     domTime = this.measure('dom_loaded', 'nav_start')
     renderTime = this.measure('page_rendered', 'nav_start')
-    NREUM.inlineHit(fragmentName, 0, 0, 0, domTime, renderTime)
+
+    if (typeof NREUM !== "undefined" && NREUM !== null) {
+      if (typeof NREUM.inlineHit === "function") {
+        NREUM.inlineHit(fragmentName, 0, 0, 0, domTime, renderTime)
+      }
+    }
   },
 
   checkBeaconRequirements: function() {
