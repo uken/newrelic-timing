@@ -30,6 +30,12 @@ Please take a look at `newrelic-timing-angular.js` as an example of how to integ
 
 ### Changelog
 
+#### 0.2.0 (December 12, 2013)
+
+- Gracefully handle NREUM not being loaded
+- newrelicTiming.sendNRBeacon() now takes optional fragment as a parameter
+- angular version uses $location.path() for fragment name
+
 #### 0.1.0 (November 27, 2013)
 
 Initial Release
