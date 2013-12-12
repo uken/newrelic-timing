@@ -1,9 +1,3 @@
-/*!
- * newrelic-timing v0.3.0 - Integrates Single Page Apps with NewRelic's Real User Monitoring
- * Copyright (c) 2013 Diogo Terror <diogo@uken.com>, pitr <pitr.vern@gmail.com> - https://github.com/uken/newrelic-timing
- * License: MIT
- */
-
 (function(angular, NewrelicTiming) {
   if (typeof angular === 'undefined' || angular === null || typeof angular.module !== 'function') {
     return;

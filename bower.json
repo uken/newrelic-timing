@@ -1,9 +1,9 @@
 {
   "name": "newrelic-timing",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "authors": [
     "Diogo Terror <diogo@uken.com>",
-    "☃ pitr <pitr.vern@gmail.com>"
+    "pitr <pitr.vern@gmail.com>"
   ],
   "description": "Integrates Single Page Apps with NewRelic's Real User Monitoring",
   "main": ["newrelic-timing.js", "newrelic-timing-angular.js"],

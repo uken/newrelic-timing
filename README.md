@@ -30,7 +30,12 @@ Please take a look at `newrelic-timing-angular.js` as an example of how to integ
 
 ### Changelog
 
-#### 0.2.0 (December 12, 2013)
+#### 0.3.0 (December 12, 2013)
+
+- add specs
+- fix minor bugs and internal refactorings
+
+#### 0.2.0 (December 12, 2013) (broken)
 
 - Gracefully handle NREUM not being loaded
 - newrelicTiming.sendNRBeacon() now takes optional fragment as a parameter
