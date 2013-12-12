@@ -16,10 +16,12 @@
     return compareTime - referenceTime
   },
 
-  sendNRBeacon: function() {
+  sendNRBeacon: function(fragmentName) {
     if (!this.checkBeaconRequirements()) return
 
-    fragmentName = window.location.hash.replace('#','%23')
+    fragmentName || (fragmentName = window.location.hash)
+    fragmentName = fragmentName.replace('#','%23')
+
     domTime = this.measure('dom_loaded', 'nav_start')
     renderTime = this.measure('page_rendered', 'nav_start')
     NREUM.inlineHit(fragmentName, 0, 0, 0, domTime, renderTime)
