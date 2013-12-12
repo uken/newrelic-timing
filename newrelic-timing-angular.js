@@ -1,4 +1,4 @@
-;angular.module('newrelic-timing').run(['$rootScope', function($rootScope) {
+;angular.module('newrelic-timing').run(['$rootScope', '$location', function($rootScope, $location) {
   $rootScope.$on('$routeChangeStart', function() {
     window.newrelicTiming.mark('nav_start')
   })
@@ -7,6 +7,6 @@
   })
   $rootScope.$on("$viewContentLoaded", function() {
     window.newrelicTiming.mark('page_rendered')
-    window.newrelicTiming.sendNRBeacon()
+    window.newrelicTiming.sendNRBeacon($location.path())
   })
 }]);
