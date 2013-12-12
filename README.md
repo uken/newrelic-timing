@@ -1,6 +1,8 @@
 NewRelic Timing
 ===============
 
+[![Build Status](https://travis-ci.org/uken/newrelic-timing.png?branch=master)](https://travis-ci.org/uken/newrelic-timing)
+
 Integrates Single Page Apps with NewRelic's Real User Monitoring
 
 ### Installing
