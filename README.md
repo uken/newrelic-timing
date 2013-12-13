@@ -15,7 +15,7 @@ then run:
 
     bower install newrelic-timing
 
-For Rails, consider using https://rails-assets.org/ and add the following to your Gemfile:
+For Rails, consider using [bower-rails gem](https://github.com/42dev/bower-rails) or https://rails-assets.org/ and add the following to your Gemfile:
 
 ```ruby
 source 'https://rails-assets.org'
