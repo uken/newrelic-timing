@@ -3,7 +3,7 @@
     return;
   }
 
-  var module = angular.module('newrelic-timing');
+  var module = angular.module('newrelic-timing', []);
 
   if (typeof module.run !== 'function') {
     return;

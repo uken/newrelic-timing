@@ -32,6 +32,10 @@ Please take a look at `newrelic-timing-angular.js` as an example of how to integ
 
 ### Changelog
 
+#### 0.3.1 (December 18, 2013)
+
+- fixed a silly typo in the angular plugin that prevented it from working
+
 #### 0.3.0 (December 12, 2013)
 
 - add specs
