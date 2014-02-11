@@ -12,12 +12,21 @@
   module.run(['$rootScope', '$location', function($rootScope, $location) {
     var newrelicTiming = new NewrelicTiming();
 
-    $rootScope.$on('$routeChangeStart', function() {
+    function changeStart(){
       newrelicTiming.mark('navStart');
-    });
-    $rootScope.$on('$routeChangeSuccess', function() {
+    }
+    function changeSuccess() {
       newrelicTiming.mark('domLoaded');
-    });
+    }
+
+    // ngRoute
+    $rootScope.$on('$routeChangeStart', changeStart);
+    $rootScope.$on('$routeChangeSuccess', changeSuccess);
+
+    // ui-router
+    $rootScope.$on('$stateChangeStart', changeStart);
+    $rootScope.$on('$stateChangeSuccess', changeSuccess);
+
     $rootScope.$on('$viewContentLoaded', function() {
       newrelicTiming.mark('pageRendered');
       newrelicTiming.sendNRBeacon($location.path());

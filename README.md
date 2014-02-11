@@ -23,6 +23,20 @@ source 'https://rails-assets.org'
 gem "rails-assets-newrelic-timing"
 ```
 
+### AngularJS 
+
+To install add both `newrelic-timing.js` and `newrelic-timing-angular.js` scripts to your html, then add `newrelic-timing` to your angular module dependencies.
+
+```javascript
+angular.module('your.application', [
+  // other dependencies
+  'newrelic-timing'
+]);
+```
+
+Supports both ui-router and ngRoute. 
+
+
 ### Usage
 
 - `newrelic-timing.js` exposes `window.newrelicTiming` that does all the work.
@@ -31,6 +45,10 @@ gem "rails-assets-newrelic-timing"
 Please take a look at `newrelic-timing-angular.js` as an example of how to integrate this into your framework.
 
 ### Changelog
+
+#### 0.4.0 (February 11, 2014)
+
+- added support for [ui-router](https://github.com/angular-ui/ui-router)
 
 #### 0.3.1 (December 18, 2013)
 

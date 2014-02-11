@@ -1,6 +1,6 @@
 /*!
- * newrelic-timing v0.3.1 - Integrates Single Page Apps with NewRelic's Real User Monitoring
- * Copyright (c) 2013 Diogo Terror <diogo@uken.com>, pitr <pitr.vern@gmail.com> - https://github.com/uken/newrelic-timing
+ * newrelic-timing v0.4.0 - Integrates Single Page Apps with NewRelic's Real User Monitoring
+ * Copyright (c) 2014 Diogo Terror <diogo@uken.com>, pitr <pitr.vern@gmail.com> - https://github.com/uken/newrelic-timing
  * License: MIT
  */
 
@@ -18,12 +18,21 @@
   module.run(['$rootScope', '$location', function($rootScope, $location) {
     var newrelicTiming = new NewrelicTiming();
 
-    $rootScope.$on('$routeChangeStart', function() {
+    function changeStart(){
       newrelicTiming.mark('navStart');
-    });
-    $rootScope.$on('$routeChangeSuccess', function() {
+    }
+    function changeSuccess() {
       newrelicTiming.mark('domLoaded');
-    });
+    }
+
+    // ngRoute
+    $rootScope.$on('$routeChangeStart', changeStart);
+    $rootScope.$on('$routeChangeSuccess', changeSuccess);
+
+    // ui-router
+    $rootScope.$on('$stateChangeStart', changeStart);
+    $rootScope.$on('$stateChangeSuccess', changeSuccess);
+
     $rootScope.$on('$viewContentLoaded', function() {
       newrelicTiming.mark('pageRendered');
       newrelicTiming.sendNRBeacon($location.path());
