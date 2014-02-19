@@ -41,4 +41,4 @@
       return this.marks.navStart && this.marks.domLoaded && this.marks.pageRendered;
     };
   };
-})(window, window.NREUM);
+})(window, (window.NREUM = window.NREUM || {}));

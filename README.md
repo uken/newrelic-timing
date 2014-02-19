@@ -46,6 +46,10 @@ Please take a look at `newrelic-timing-angular.js` as an example of how to integ
 
 ### Changelog
 
+#### 0.4.1 (February 18, 2014)
+
+- NREUM will now be set to be an object if it's not defined when NewrelicTiming is created, this means newrelic scripts can load _after_ it's defined and it should still work. 
+
 #### 0.4.0 (February 11, 2014)
 
 - added support for [ui-router](https://github.com/angular-ui/ui-router)

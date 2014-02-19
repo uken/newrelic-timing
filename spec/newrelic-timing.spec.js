@@ -8,6 +8,12 @@
       newrelicTiming  = new global.NewrelicTiming();
     });
 
+    describe('NREUM', function () {
+      it('it should define an object in case it has not been loaded yet', function () {
+        expect(newrelicTiming.NREUM).toEqual({});
+      });
+    });
+
     describe('mark', function() {
 
       it('marks an event', function() {
