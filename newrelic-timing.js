@@ -1,5 +1,5 @@
 /*!
- * newrelic-timing v0.4.0 - Integrates Single Page Apps with NewRelic's Real User Monitoring
+ * newrelic-timing v0.4.1 - Integrates Single Page Apps with NewRelic's Real User Monitoring
  * Copyright (c) 2014 Diogo Terror <diogo@uken.com>, pitr <pitr.vern@gmail.com> - https://github.com/uken/newrelic-timing
  * License: MIT
  */
@@ -47,4 +47,4 @@
       return this.marks.navStart && this.marks.domLoaded && this.marks.pageRendered;
     };
   };
-})(window, window.NREUM);
+})(window, (window.NREUM = window.NREUM || {}));
