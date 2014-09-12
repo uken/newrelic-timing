@@ -1,7 +1,6 @@
-(function(window, NREUM){
+(function(window){
   window.NewrelicTiming = function() {
     this.marks = {};
-    this.NREUM = NREUM;
 
     this.mark = function(name) {
       this.marks[name] = +new Date();
@@ -31,14 +30,14 @@
       var domTime = this.measure('domLoaded', 'navStart');
       var renderTime = this.measure('pageRendered', 'navStart');
 
-      this.NREUM.inlineHit(fragmentName, 0, 0, 0, domTime, renderTime);
+      window.NREUM.inlineHit(fragmentName, 0, 0, 0, domTime, renderTime);
     };
 
     this.checkBeaconRequirements = function() {
-      if (!this.NREUM || !this.NREUM.inlineHit || typeof this.NREUM.inlineHit !== 'function') {
+      if (!window.NREUM || !window.NREUM.inlineHit || typeof window.NREUM.inlineHit !== 'function') {
         return false;
       }
       return this.marks.navStart && this.marks.domLoaded && this.marks.pageRendered;
     };
   };
-})(window, window.NREUM);
+})(window);
