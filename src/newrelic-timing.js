@@ -28,6 +28,8 @@
 
       fragmentName || (fragmentName = window.location.hash.substring(1));
 
+      fragmentName = fragmentName.replace(/\/[0-9]+\//g, '/*/').replace(/\/[0-9]+$/, '/*');
+
       var domTime = this.measure('domLoaded', 'navStart');
       var renderTime = this.measure('pageRendered', 'navStart');
 
