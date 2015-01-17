@@ -111,7 +111,7 @@
       });
 
       it('replaces id\'s in fragmentName', function() {
-	newrelicTiming.sendNRBeacon('/page1/info/12345/view/1/2');
+        newrelicTiming.sendNRBeacon('/page1/info/12345/view/1/2');
 
         expect(results).toEqual(['/page1/info/*/view/*/*', 0, 0, 0, 4, 15]);
       });
