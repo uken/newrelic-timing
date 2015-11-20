@@ -36,6 +36,12 @@ angular.module('your.application', [
 
 Supports both ui-router and ngRoute. 
 
+### Configuration
+
+There are no configuration options in newrelic-timling. You only need to make sure that the New Relic javascript is loaded correctly (through injection or by copy-pasting the snippet). Steps explaining how to add the New Relic javascript to your website can be found on their [website](https://docs.newrelic.com/docs/browser/new-relic-browser/installation-configuration/adding-apps-new-relic-browser).
+
+Once configured correctly, newrelic-timing will use the API exposed by New Relic to send timing information to the New Relic server. These timings will show up as APM Transactions in the New Relic Browser dashboards.
+
 
 ### Usage
 

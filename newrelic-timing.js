@@ -1,6 +1,6 @@
 /*!
  * newrelic-timing v0.4.0 - Integrates Single Page Apps with NewRelic's Real User Monitoring
- * Copyright (c) 2014 Diogo Terror <diogo@uken.com>, pitr <pitr.vern@gmail.com> - https://github.com/uken/newrelic-timing
+ * Copyright (c) 2015 Diogo Terror <diogo@uken.com>, pitr <pitr.vern@gmail.com> - https://github.com/uken/newrelic-timing
  * License: MIT
  */
 
@@ -33,6 +33,8 @@
       }
 
       fragmentName || (fragmentName = window.location.hash.substring(1));
+
+      fragmentName = fragmentName.replace(/\/[0-9]+\//g, '/*/').replace(/\/[0-9]+$/, '/*');
 
       var domTime = this.measure('domLoaded', 'navStart');
       var renderTime = this.measure('pageRendered', 'navStart');
